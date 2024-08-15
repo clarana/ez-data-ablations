@@ -1,0 +1,15 @@
+datasets
+numpy
+pandas
+transformers
+tokenizers
+torchmetrics
+wandb
+composer
+torch==2.1.1
+scikit-learn
+ipdb
+importlib_metadata
+urllib3
+huggingface_hub
+rich
