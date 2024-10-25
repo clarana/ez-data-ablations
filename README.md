@@ -1,5 +1,7 @@
 # ez-data-ablations
-Public repository for "Approximating Training Data Ablations for Language Models through Model Merging".
+Public repository for "Scalable Data Ablation Approximations for Language Models through Modular Training and Merging". 
+
+**[[Paper]](https://arxiv.org/abs/2410.15661)** and **[[Data and example models]](https://huggingface.co/collections/claran/scalable-data-ablations-6711b7078273ae67b80afc6a)**
 
 This is a work in progress. Please feel free to reach out with any questions!
 
@@ -28,7 +30,11 @@ See [OLMo-Eval](https://github.com/allenai/OLMo-Eval) and [PALOMA evaluation](ht
 # Preparing Data
 
 As described in our paper, we use English Wikipedia and Gutenberg as seed pre-training data, and we use data from up to two high-level sources ([S2ORC](https://aclanthology.org/2020.acl-main.447/) and [M2D2 Wikipedia](https://aclanthology.org/2022.emnlp-main.63/)) as continued pre-training data.
-The data will be available on HuggingFace shortly (TODO 1)
+
+Data available on HuggingFace: 
+- Decontaminated seed pre-training data: **[[claran/seed-pretrain-decon]]**(https://huggingface.co/datasets/claran/seed-pretrain-decon/tree/main)
+- Topically and temporally partitioned (+ decontaminated, and resplit into train/val/test) academic documents: **[[claran/modular-s2orc]]**(https://huggingface.co/datasets/claran/modular-s2orc)
+- Decontaminated M2D2 Wikipedia, reorganized into separate documents: **[[claran/m2d2-wiki-decon]]**(https://huggingface.co/datasets/claran/m2d2-wiki-decon)
 
 The notebook at ([notebooks](notebooks) TODO 2) documents the procedure used to determine the exact splits.
 
@@ -39,7 +45,10 @@ Our training scripts expect tokenized inputs, but evaluation data for offline pe
 # Training a Model
 
 We provide an example script for training a seed model at ([scripts](scripts) TODO 3). 
-Seed models are available at (TODO 4). 
+
+We release our seed models: 
+- **[[130m model]](https://huggingface.co/claran/seed-pretrain-130m)**
+- **[[1.1b model]](https://huggingface.co/claran/seed-pretrain-1_1b)**
 
 We provide scripts corresponding to different experiments in the paper in ([configs](configs) TODO 5, + commands with args)
 
@@ -69,8 +78,19 @@ See our notebooks for details on figure generation. We include pdf and png versi
 
 # Misc.
 
-- Preprint/paper citation to come
 - Our small models have 130m parameters but are referred to as 110m parameter models throughout this repo
+- ArXiv citation (official @inproceedings to come):
 
-- 
+```
+@misc{na2024scalable,
+      title={Scalable Data Ablation Approximations for Language Models through Modular Training and Merging}, 
+      author={Clara Na and Ian Magnusson and Ananya Harsh Jha and Tom Sherborne and Emma Strubell and Jesse Dodge and Pradeep Dasigi},
+      year={2024},
+      eprint={2410.15661},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.15661}, 
+}
+```
+
 
