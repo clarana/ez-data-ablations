@@ -20,13 +20,6 @@ def main(args):
     
     eval_datasets = [get_eval_data(tokenizer, partition_name, data_subdir=args.data_subdir, split=args.split) for partition_name in partition_names]
 
-    
-#     if args.data_eval_mode == "combine":
-#         eval_datasets = [combine_datasets(eval_datasets)]
-#         partition_names = ['-'.join(args.partition_names)]
-#     elif args.data_eval_mode == "each":
-#         partition_names = args.partition_names
-#         # maybe todo, affect metrics saving saving
         
     if args.model_eval_mode == "eval_only":
         for full_model_path in full_model_paths:

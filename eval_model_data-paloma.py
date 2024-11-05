@@ -14,14 +14,10 @@ def main(args):
         full_model_paths = args.full_model_paths
 
     tokenizer = get_tokenizer(full_model_paths[0])
-    # partition_names = ["m2d2_s2orc_unsplit/val/val_cs.CY.jsonl.gz", "m2d2_s2orc_unsplit/val/val_Philosophy.jsonl.gz"]#, "m2d2_wikipedia_unsplit", "wikitext_103", "ptb"]
 
-    # partition_names = ["m2d2_s2orc_unsplit", "m2d2_wikipedia_unsplit", "wikitext_103", "ptb", "4chan_meta_sep", "c4_en", "mc4", "redpajama", "manosphere_meta_sep"]
 
     partition_names = ["m2d2_s2orc_unsplit", "m2d2_wikipedia_unsplit", "wikitext_103", "ptb", "4chan_meta_sep", "c4_en", "mc4", "redpajama", "manosphere_meta_sep", "twitterAAE_HELM_fixed", "dolma-v1_5", "pile"]
-    # partition_names = ["twitterAAE_HELM_fixed", "dolma-v1_5", "pile"]
 
-    # partition_names = [*([f"m2d2_wikipedia_unsplit/val/{history_split}" for history_split in ["val_History_and_events__By_continent.jsonl.gz", "val_History_and_events__By_period.jsonl.gz", "val_History_and_events__By_region.jsonl.gz", "val_History_and_events.jsonl.gz"]]), "m2d2_wikipedia_unsplit", "wikitext_103", "ptb", "mc4", "redpajama"]
     eval_datasets = [get_eval_data(tokenizer, part_name, data_subdir="v3_not_deconned", split=args.split) for part_name in partition_names]
         
     if args.model_eval_mode == "eval_only":
