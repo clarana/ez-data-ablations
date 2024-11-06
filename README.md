@@ -32,9 +32,9 @@ See [OLMo-Eval](https://github.com/allenai/OLMo-Eval) and [PALOMA evaluation](ht
 As described in our paper, we use English Wikipedia and Gutenberg as seed pre-training data, and we use data from up to two high-level sources ([S2ORC](https://aclanthology.org/2020.acl-main.447/) and [M2D2 Wikipedia](https://aclanthology.org/2022.emnlp-main.63/)) as continued pre-training data.
 
 Data available on HuggingFace: 
-- Decontaminated seed pre-training data: **[[claran/seed-pretrain-decon]]**(https://huggingface.co/datasets/claran/seed-pretrain-decon/tree/main)
-- Topically and temporally partitioned (+ decontaminated, and resplit into train/val/test) academic documents: **[[claran/modular-s2orc]]**(https://huggingface.co/datasets/claran/modular-s2orc)
-- Decontaminated M2D2 Wikipedia, reorganized into separate documents: **[[claran/m2d2-wiki-decon]]**(https://huggingface.co/datasets/claran/m2d2-wiki-decon)
+- Decontaminated seed pre-training data: **[[claran/seed-pretrain-decon]](https://huggingface.co/datasets/claran/seed-pretrain-decon/tree/main)**
+- Topically and temporally partitioned (+ decontaminated, and resplit into train/val/test) academic documents: **[[claran/modular-s2orc]](https://huggingface.co/datasets/claran/modular-s2orc)**
+- Decontaminated M2D2 Wikipedia, reorganized into separate documents: **[[claran/m2d2-wiki-decon]](https://huggingface.co/datasets/claran/m2d2-wiki-decon)**
 
 The notebook at ([notebooks](notebooks) TODO 2) documents the procedure used to determine the exact splits.
 
